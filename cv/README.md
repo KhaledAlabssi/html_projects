@@ -5,7 +5,7 @@ This is the first HTML project, practice for Frontend course participants.
 - HTML basic tags
 
 ## Build/Practice:
-Build this project by checking out how it looks [here](https://www.html-cv.khaled.page), or by going through the steps below.
+Build this project by checking out how it looks [here](https://html-cv.khaled.page), or by going through the steps below.
 
 ## Steps/Walkthrough:
 
