@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Trip Registration Page</title>
+    <style type="text/css">
+        table {
+        display: none;
+        }
+        th, tr, td {
+        border-bottom: 3px solid gray;
+        }
+    </style>
+   
+  </head>
+  <body>
+    <h1>Free Tickets to the Moon</h1>
+
+    <h2>Apply now!!!</h2>
+
+    <form action="">
+      <label for="name">Name: </label>
+      <input type="text" id="name" />
+      <br />
+
+      <label for="email">Email: </label>
+      <input type="email" id="email" />
+      <br />
+
+      <label for="password">Password: </label>
+      <input type="password" id="password" />
+      <br />
+
+      <label for="people">How many people would you like to include?</label>
+      <input type="number" min="0" max="5" step="1" value="0" id="people" />
+      <br />
+
+      <label for="reason">Why would you like to go to the moon?</label>
+      <!-- <input type="text" id="reason" /> -->
+      <select id="reason">
+        <option value="For fun">For fun</option>
+        <option value="To study the moon">To study the moon</option>
+        <option value="To discover the moon">To discover the moon</option>
+        <option value="I'm board here 'on the planet'">
+          I'm board here 'on the planet'
+        </option>
+      </select>
+      <br />
+
+      <p for="allergy">Do you have any kind of allergy?</p>
+      <input type="radio" id="yes-allergy" name="allergy" value="Yes" />
+      <label for="yes-allergy">Yes</label>
+      <input type="radio" id="no-allergy" name="allergy" value="No" />
+      <label for="no-allergy">No</label>
+      <br />
+
+      <label for="desc">Anything we should know? </label>
+      <textarea id="desc" name="desc" rows="3" cols="30"></textarea>
+      <br />
+
+      <label for="date">Date of application: </label>
+      <input type="date" id="date" />
+      <br />
+
+      <label for="time">Time of application: </label>
+      <input type="time" id="time" />
+      <br />
+
+      <input type="submit" id="submit" value="Submit" />
+      <br />
+    </form>
+
+    <table id="table">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>People Joining</th>
+        <th>Reason</th>
+        <th>Allergy</th>
+        <th>Food List</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      document.getElementById("submit").onclick = function (e) {
+        e.preventDefault()
+        var table = document.getElementById("table")
+        table.style.display = "block"
+
+        var row = table.insertRow(-1)
+        var name = row.insertCell(0)
+        var email = row.insertCell(1)
+        var people = row.insertCell(2)
+        var reason = row.insertCell(3)
+        var allergy = row.insertCell(4)
+        var extra = row.insertCell(5)
+        var time = row.insertCell(6)
+        var date = row.insertCell(7)
+
+        name.innerHTML = document.getElementById("name").value
+        document.getElementById("name").value = "";
+        email.innerHTML = document.getElementById("email").value
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+
+        people.innerHTML = document.getElementById("people").value
+        document.getElementById("people").value = "";
+
+        reason.innerHTML = document.getElementById("reason").value
+        document.getElementById("reason").value = "";
+
+        allergy.innerHTML = document.querySelector(
+          'input[name="allergy"]:checked'
+        ).value
+        document.querySelector('input[name="allergy"]:checked').value = ""
+
+        extra.innerHTML = document.getElementById("desc").value
+        document.getElementById("desc").value = "";
+
+        date.innerHTML = document.getElementById("date").value
+        document.getElementById("date").value = "";
+
+        time.innerHTML = document.getElementById("time").value
+        document.getElementById("time").value = "";
+
+
+        return false
+      }
+    </script>
+  </body>
+</html>
